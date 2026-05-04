@@ -6,12 +6,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400&family=Inter+Tight:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
 
 :root {
-  /* Palette */
-  --ink:        #0A1628;   /* bleu nuit profond — fond dominant */
-  --ink-soft:   #17253D;   /* bleu plus clair — bandes secondaires */
-  --ink-line:   #24344F;   /* bleu — lignes structurantes */
-  --black:      #05101F;   /* bleu très profond — bandes & titres */
-  --black-soft: #0A1628;
+  /* Palette — tous les bleus unifiés sur la base Major Exchanges */
+  --ink:        #005493;
+  --ink-soft:   #005493;
+  --ink-line:   #005493;
+  --black:      #005493;
+  --black-soft: #005493;
   --paper:      #F4EFE6;   /* crème chaude — texte principal */
   --paper-soft: #EAE2D3;
   --rust:       #C2572E;   /* terracotta — accent principal */
@@ -20,7 +20,7 @@
   --gold:       #C9A961;   /* or atténué — secondaire */
   --sage:       #7A8B6F;
   --venn-orange: #D87331;  /* Venn diagram softskills */
-  --venn-blue:   #2B6FB8;
+  --venn-blue:   #005493;
   --venn-red:    #C24330;
 
   /* Typography */
@@ -191,7 +191,7 @@ p { max-width: 68ch; }
   font-size: 1.25rem;
   font-weight: 500;
   letter-spacing: 0.08em;
-  color: var(--rust);
+  color: var(--paper);
   display: flex;
   align-items: center;
   gap: 12px;
@@ -200,8 +200,7 @@ p { max-width: 68ch; }
 }
 
 .nav-logo .accent {
-  color: var(--gold);
-  font-style: italic;
+  color: var(--paper);
   font-weight: 400;
 }
 
@@ -227,6 +226,7 @@ p { max-width: 68ch; }
 .logo-text {
   display: inline-block;
   white-space: nowrap;
+  text-transform: uppercase;
 }
 
 /* Sur mobile, masquer le texte, ne garder que le logo */
@@ -345,7 +345,7 @@ main { padding-top: 84px; }
   position: relative;
   overflow: hidden;
   background:
-    radial-gradient(ellipse at 50% 40%, #0F1B30 0%, var(--black) 75%);
+    radial-gradient(ellipse at 50% 40%, #005493 0%, var(--black) 75%);
 }
 
 /* Halo central très discret pour donner de la profondeur derrière la rosace */
@@ -1574,7 +1574,7 @@ main { padding-top: 84px; }
   border-radius: 50%;
   margin-bottom: 24px;
   background:
-    radial-gradient(circle at 30% 30%, #2a3a55, var(--ink) 70%);
+    radial-gradient(circle at 30% 30%, #005493, var(--ink) 70%);
   display: flex;
   align-items: center;
   justify-content: center;
