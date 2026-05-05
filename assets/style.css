@@ -170,10 +170,10 @@ p { max-width: 68ch; }
   top: 0; left: 0; right: 0;
   z-index: 100;
   padding: 20px var(--gutter);
-  background: rgba(5, 8, 16, 0.88);
+  background: rgba(0, 84, 147, 0.92);
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
-  border-bottom: 1px solid rgba(255,255,255,0.08);
+  border-bottom: 1px solid rgba(255,255,255,0.12);
   transition: padding 0.3s var(--ease);
 }
 
