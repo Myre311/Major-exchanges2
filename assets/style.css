@@ -7,11 +7,11 @@
 
 :root {
   /* Palette — tous les bleus unifiés sur la base Major Exchanges */
-  --ink:        #005493;
-  --ink-soft:   #005493;
-  --ink-line:   #005493;
-  --black:      #005493;
-  --black-soft: #005493;
+  --ink:        #1F4E5F;
+  --ink-soft:   #2A5E72;
+  --ink-line:   #1F4E5F;
+  --black:      #1F4E5F;
+  --black-soft: #1F4E5F;
   --paper:      #F4EFE6;   /* crème chaude — texte principal */
   --paper-soft: #EAE2D3;
   --rust:       #C2572E;   /* terracotta — accent principal */
@@ -20,7 +20,7 @@
   --gold:       #C9A961;   /* or atténué — secondaire */
   --sage:       #7A8B6F;
   --venn-orange: #D87331;  /* Venn diagram softskills */
-  --venn-blue:   #005493;
+  --venn-blue:   #1F4E5F;
   --venn-red:    #C24330;
 
   /* Typography */
@@ -170,10 +170,8 @@ p { max-width: 68ch; }
   top: 0; left: 0; right: 0;
   z-index: 100;
   padding: 20px var(--gutter);
-  background: rgba(5, 8, 16, 0.88);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
-  border-bottom: 1px solid rgba(255,255,255,0.08);
+  background: var(--paper);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
   transition: padding 0.3s var(--ease);
 }
 
@@ -191,7 +189,7 @@ p { max-width: 68ch; }
   font-size: 1.25rem;
   font-weight: 500;
   letter-spacing: 0.08em;
-  color: var(--paper);
+  color: var(--ink);
   display: flex;
   align-items: center;
   gap: 12px;
@@ -200,7 +198,7 @@ p { max-width: 68ch; }
 }
 
 .nav-logo .accent {
-  color: var(--paper);
+  color: var(--ink);
   font-weight: 400;
 }
 
@@ -248,12 +246,12 @@ p { max-width: 68ch; }
 
 .nav-links a {
   font-size: 0.875rem;
-  color: var(--paper-soft);
+  color: rgba(31, 78, 95, 0.75);
   transition: color 0.2s var(--ease);
   position: relative;
 }
 
-.nav-links a:hover { color: var(--paper); }
+.nav-links a:hover { color: var(--ink); }
 
 .nav-links a.active::after {
   content: '';
@@ -265,7 +263,8 @@ p { max-width: 68ch; }
 
 .nav-cta {
   padding: 10px 22px;
-  border: 1px solid var(--paper);
+  border: 1px solid var(--ink);
+  color: var(--ink);
   border-radius: 2px;
   font-size: 0.8125rem;
   letter-spacing: 0.05em;
@@ -273,16 +272,16 @@ p { max-width: 68ch; }
   transition: all 0.25s var(--ease);
 }
 
-.nav-cta:hover {
-  background: var(--paper);
-  color: var(--ink);
+.nav-links a.nav-cta:hover {
+  background: var(--ink);
+  color: var(--paper);
 }
 
 .nav-app {
   padding: 7px 14px;
   background: transparent;
-  color: var(--paper);
-  border: 1px solid rgba(244, 239, 230, 0.35);
+  color: var(--ink);
+  border: 1px solid rgba(31, 78, 95, 0.35);
   border-radius: 2px;
   font-size: 0.75rem;
   letter-spacing: 0.04em;
@@ -293,13 +292,13 @@ p { max-width: 68ch; }
   gap: 6px;
 }
 
-.nav-app:hover {
-  background: var(--paper);
-  color: var(--ink);
-  border-color: var(--paper);
+.nav-links a.nav-app:hover {
+  background: var(--ink);
+  color: var(--paper);
+  border-color: var(--ink);
 }
 
-.nav-burger { display: none; background: none; border: 0; color: var(--paper); cursor: pointer; padding: 8px; }
+.nav-burger { display: none; background: none; border: 0; color: var(--ink); cursor: pointer; padding: 8px; }
 .nav-burger svg { width: 24px; height: 24px; }
 
 @media (max-width: 960px) {
@@ -310,11 +309,25 @@ p { max-width: 68ch; }
     flex-direction: column;
     position: absolute;
     top: 100%; left: 0; right: 0;
-    background: var(--ink-soft);
+    background: var(--paper);
     padding: 24px var(--gutter);
-    border-bottom: 1px solid var(--ink-line);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
     gap: 20px;
     align-items: flex-start;
+  }
+  .nav-links.open li { width: 100%; }
+  .nav-links.open a {
+    display: block;
+    width: 100%;
+    padding: 6px 0;
+    font-size: 0.95rem;
+  }
+  .nav-links.open .nav-cta,
+  .nav-links.open .nav-app {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
   }
 }
 
@@ -370,7 +383,7 @@ main { padding-top: 84px; }
   position: relative;
   overflow: hidden;
   background:
-    radial-gradient(ellipse at 50% 40%, #005493 0%, var(--black) 75%);
+    radial-gradient(ellipse at 50% 40%, #1F4E5F 0%, var(--black) 75%);
 }
 
 /* Halo central très discret pour donner de la profondeur derrière la rosace */
@@ -1599,7 +1612,7 @@ main { padding-top: 84px; }
   border-radius: 50%;
   margin-bottom: 24px;
   background:
-    radial-gradient(circle at 30% 30%, #005493, var(--ink) 70%);
+    radial-gradient(circle at 30% 30%, #1F4E5F, var(--ink) 70%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1943,3 +1956,29 @@ main { padding-top: 84px; }
   }
 }
 
+
+/* =========================================================
+   Card frames — Option B
+   Cadres apparents pour toutes les sections multi-items.
+   Bordure beige semi-transparente sur fond pétrole pour fort contraste.
+   Sections claires (.section-light) gardent leur border-color spécifique.
+   ========================================================= */
+.step,
+.offer,
+.pillar,
+.validation-item {
+  border: 1px solid rgba(244, 239, 230, 0.18);
+}
+
+/* .pillar et .validation-item utilisaient var(--ink) (= body bg) =
+   cards invisibles. On bascule sur le nouveau --ink-soft (légèrement
+   plus clair que le body) pour les rendre lisibles. */
+.pillar,
+.validation-item {
+  background: var(--ink-soft);
+}
+
+/* Hover du pillar — tonalité encore plus claire pour feedback visuel */
+.pillar:hover {
+  background: #34708A;
+}
