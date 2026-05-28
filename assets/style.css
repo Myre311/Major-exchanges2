@@ -1982,3 +1982,70 @@ main { padding-top: 84px; }
 .pillar:hover {
   background: #34708A;
 }
+/* Language selector FR/EN — added 2026-05-27 */
+.nav-lang {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 500;
+  padding: 8px 14px;
+  margin-left: 4px;
+  border: 1px solid var(--ink-line);
+  border-radius: 2px;
+  transition: border-color 0.3s var(--ease);
+}
+.nav-lang:hover { border-color: var(--rust); }
+.nav-lang .current {
+  color: var(--rust);
+  font-weight: 600;
+}
+.nav-lang .sep {
+  color: var(--ink-line);
+  margin: 0 2px;
+}
+.nav-lang a {
+  color: var(--ink);
+  opacity: 0.55;
+  transition: opacity 0.2s var(--ease), color 0.2s var(--ease);
+}
+.nav-lang a:hover {
+  opacity: 1;
+  color: var(--rust);
+}
+@media (max-width: 980px) {
+  .nav-links.open .nav-lang {
+    justify-content: center;
+    width: 100%;
+    margin-left: 0;
+    margin-top: 8px;
+  }
+}
+/* Nav fix — 2026-05-27 : empêche wrap intra-bouton et resserre */
+.nav-links {
+  gap: 20px !important;  /* réduit de 32px à 20px */
+}
+.nav-links li,
+.nav-links a {
+  white-space: nowrap;
+}
+.nav-cta {
+  padding: 8px 16px !important;
+  white-space: nowrap;
+}
+.nav-app {
+  padding: 6px 12px !important;
+  white-space: nowrap;
+}
+.nav-lang {
+  padding: 6px 10px !important;
+  white-space: nowrap;
+  font-size: 0.65rem !important;
+}
+@media (max-width: 1280px) {
+  .nav-links { gap: 14px !important; }
+  .nav-links a { font-size: 0.82rem !important; }
+}
