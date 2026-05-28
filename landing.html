@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Major Exchanges — Méthodologie RH experte</title>
+  <meta name="description" content="Major Exchanges met à disposition des experts RH une méthodologie d'analyse comportementale contextualisée pour des décisions humaines plus fiables. Validée OTAN, Lafayette, OMC." />
+  <meta name="robots" content="noindex,follow" />
+  <meta property="og:title" content="Major Exchanges — Structurer l'analyse. Éclairer la décision RH." />
+  <meta property="og:description" content="Méthodologie d'analyse comportementale contextualisée pour des décisions humaines plus fiables." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="fr_FR" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
+  <link rel="apple-touch-icon" href="assets/favicon.png" />
+  <link rel="stylesheet" href="assets/style.css?v=202605281850" />
+  <style>
+    /* LANDING refonte — DA Major Exchanges */
+    body.lp { background: var(--ink); color: var(--paper); }
+    body.lp main { padding-top: 0 !important; }
+    body.lp .footer .footer-grid { display: none; }
+    body.lp .footer { background: var(--ink); padding-top: 0; }
+
+    .lp-nav {
+      position: sticky; top: 0; z-index: 50;
+      background: var(--paper);
+      border-bottom: 1px solid rgba(31, 78, 95, 0.08);
+    }
+    .lp-nav-inner {
+      max-width: 1320px; margin: 0 auto;
+      padding: 14px clamp(20px, 4vw, 48px);
+      display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    }
+    .lp-nav-logo { display: flex; align-items: center; line-height: 0; }
+    .lp-nav-logo img { height: 40px; width: auto; max-width: 280px; object-fit: contain; display: block; }
+    .lp-nav-cta {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 10px 18px;
+      background: var(--rust); color: var(--paper);
+      border: 1px solid var(--rust); border-radius: 2px;
+      font-size: 0.78rem; font-weight: 500;
+      letter-spacing: 0.06em; text-transform: uppercase;
+      transition: background 0.3s var(--ease);
+    }
+    .lp-nav-cta:hover { background: var(--rust-deep); }
+    .lp-nav-cta svg { width: 14px; height: 14px; flex-shrink: 0; }
+
+    /* HERO 2 colonnes */
+    .lp-hero {
+      background: var(--ink);
+      padding: clamp(48px, 6vw, 80px) clamp(20px, 4vw, 48px);
+    }
+    .lp-hero-eyebrow-bar {
+      max-width: 1320px; margin: 0 auto 32px;
+      display: flex; align-items: center; justify-content: flex-end; gap: 16px;
+      font-family: var(--font-mono);
+      font-size: 0.72rem; letter-spacing: 0.22em;
+      text-transform: uppercase; color: var(--gold);
+    }
+    .lp-hero-eyebrow-bar::before {
+      content: ""; flex: 1; height: 1px; background: var(--gold);
+      max-width: 200px; opacity: 0.5;
+    }
+    .lp-hero-grid {
+      max-width: 1320px; margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(40px, 5vw, 80px);
+      align-items: center;
+    }
+    .lp-hero-title {
+      font-family: var(--font-display);
+      font-weight: 400;
+      font-size: clamp(2rem, 4.5vw, 3.4rem);
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      color: var(--paper);
+      margin: 0 0 24px;
+    }
+    .lp-hero-title em { font-style: italic; font-weight: 300; color: var(--rust-soft); }
+    .lp-hero-lead {
+      font-size: 1.02rem; line-height: 1.6;
+      color: var(--paper-soft);
+      max-width: 50ch; margin: 0 0 32px;
+    }
+    .lp-hero-ctas { display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 36px; }
+    .lp-btn-primary {
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 14px 26px;
+      background: var(--rust); color: var(--paper);
+      border: 1px solid var(--rust); border-radius: 2px;
+      font-size: 0.82rem; font-weight: 500;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      transition: all 0.3s var(--ease);
+      box-shadow: 0 4px 16px rgba(194, 87, 46, 0.25);
+    }
+    .lp-btn-primary:hover {
+      background: var(--rust-deep);
+      transform: translateY(-1px);
+      box-shadow: 0 8px 24px rgba(194, 87, 46, 0.4);
+    }
+    .lp-btn-primary svg { width: 16px; height: 16px; flex-shrink: 0; }
+    .lp-btn-ghost {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 14px 18px;
+      color: var(--paper);
+      border-bottom: 1px solid rgba(244, 239, 230, 0.3);
+      font-size: 0.82rem; font-weight: 500;
+      letter-spacing: 0.04em; text-transform: uppercase;
+      transition: border-color 0.3s var(--ease), color 0.3s var(--ease);
+    }
+    .lp-btn-ghost:hover { color: var(--gold); border-color: var(--gold); }
+    .lp-btn-ghost svg { width: 14px; height: 14px; transition: transform 0.3s var(--ease); }
+    .lp-btn-ghost:hover svg { transform: translateX(4px); }
+
+    .lp-hero-bullets {
+      display: flex; flex-direction: column; gap: 14px;
+      margin: 0; padding: 0; list-style: none;
+    }
+    .lp-hero-bullets li {
+      display: flex; align-items: flex-start; gap: 12px;
+      font-size: 0.92rem;
+      color: var(--paper-soft);
+      line-height: 1.45;
+    }
+    .lp-hero-bullets svg {
+      width: 18px; height: 18px;
+      flex-shrink: 0; color: var(--gold);
+      margin-top: 2px;
+    }
+
+    /* Diagramme radar */
+    .lp-hero-diagram {
+      position: relative;
+      width: 100%;
+      max-width: 520px;
+      aspect-ratio: 1;
+      margin: 0 auto;
+    }
+    .lp-hero-diagram svg { width: 100%; height: 100%; display: block; }
+    .lp-radar-label {
+      position: absolute;
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--paper);
+      text-align: center;
+      max-width: 110px;
+      line-height: 1.3;
+    }
+    .lp-radar-center {
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      font-family: var(--font-display);
+      font-style: italic; font-weight: 300;
+      font-size: 0.95rem;
+      color: var(--gold);
+      text-align: center;
+      line-height: 1.2;
+    }
+
+    @media (max-width: 900px) {
+      .lp-hero-grid { grid-template-columns: 1fr; }
+      .lp-hero-diagram { max-width: 380px; }
+    }
+
+    /* LE DÉFI */
+    .lp-defi {
+      background: var(--paper); color: var(--ink);
+      padding: clamp(64px, 8vw, 120px) clamp(20px, 4vw, 48px);
+    }
+    .lp-defi-inner { max-width: 1320px; margin: 0 auto; }
+    .lp-section-eyebrow {
+      display: flex; justify-content: center;
+      font-family: var(--font-mono);
+      font-size: 0.72rem; letter-spacing: 0.22em;
+      text-transform: uppercase; color: var(--rust);
+      margin-bottom: 16px;
+    }
+    .lp-defi h2 {
+      font-family: var(--font-display);
+      font-weight: 400;
+      font-size: clamp(1.6rem, 3vw, 2.3rem);
+      line-height: 1.2; letter-spacing: -0.015em;
+      color: var(--ink);
+      text-align: center;
+      max-width: 800px; margin: 0 auto 56px;
+    }
+    .lp-defi-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 32px;
+    }
+    .lp-defi-card {
+      text-align: center;
+      padding: 20px 12px;
+      display: flex; flex-direction: column; gap: 14px; align-items: center;
+    }
+    .lp-defi-icon { width: 48px; height: 48px; color: var(--ink-soft); opacity: 0.8; }
+    .lp-defi-card h3 {
+      font-family: var(--font-display);
+      font-weight: 500; font-size: 1.05rem;
+      line-height: 1.3; color: var(--ink); margin: 0;
+    }
+    .lp-defi-card p { font-size: 0.88rem; line-height: 1.55; color: var(--ink-soft); margin: 0; }
+    @media (max-width: 900px) { .lp-defi-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; } }
+    @media (max-width: 540px) { .lp-defi-grid { grid-template-columns: 1fr; } }
+
+    /* MÉTHODOLOGIE */
+    .lp-methodo {
+      background: var(--ink); color: var(--paper);
+      padding: clamp(64px, 8vw, 120px) clamp(20px, 4vw, 48px);
+    }
+    .lp-methodo-inner { max-width: 1320px; margin: 0 auto; }
+    .lp-methodo-eyebrow {
+      font-family: var(--font-mono);
+      font-size: 0.72rem; letter-spacing: 0.22em;
+      text-transform: uppercase; color: var(--gold);
+      margin-bottom: 16px;
+    }
+    .lp-methodo h2 {
+      font-family: var(--font-display);
+      font-weight: 400;
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+      line-height: 1.15; letter-spacing: -0.02em;
+      color: var(--paper);
+      margin: 0 0 48px; max-width: 720px;
+    }
+    .lp-methodo-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 64px;
+      align-items: start;
+    }
+    .lp-methodo-uses {
+      list-style: none; padding: 0; margin: 0;
+      display: flex; flex-direction: column; gap: 16px;
+    }
+    .lp-methodo-uses li {
+      display: flex; align-items: center; gap: 12px;
+      font-size: 1rem; color: var(--paper);
+    }
+    .lp-methodo-uses li svg { width: 16px; height: 16px; color: var(--gold); flex-shrink: 0; }
+
+    .lp-methodo-steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .lp-step {
+      display: flex; flex-direction: column; gap: 14px; align-items: center;
+      text-align: center;
+      padding: 24px 16px;
+      background: rgba(244, 239, 230, 0.03);
+      border: 1px solid rgba(244, 239, 230, 0.1);
+      border-radius: 4px;
+    }
+    .lp-step-num {
+      width: 30px; height: 30px; border-radius: 50%;
+      background: var(--rust); color: var(--paper);
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--font-mono);
+      font-size: 0.85rem; font-weight: 600;
+    }
+    .lp-step-icon { width: 40px; height: 40px; color: var(--gold); margin: 4px 0 8px; }
+    .lp-step h3 {
+      font-family: var(--font-display);
+      font-weight: 500; font-size: 1rem;
+      line-height: 1.3; color: var(--paper); margin: 0;
+    }
+    .lp-step p { font-size: 0.85rem; line-height: 1.5; color: var(--paper-soft); margin: 0; }
+    .lp-methodo-note {
+      margin-top: 32px;
+      padding: 18px 24px;
+      background: rgba(244, 239, 230, 0.04);
+      border-left: 2px solid var(--gold);
+      font-size: 0.85rem;
+      color: var(--paper-soft);
+      display: flex; align-items: center; gap: 14px;
+    }
+    .lp-methodo-note .pi-icon { width: 18px; height: 18px; color: var(--gold); flex-shrink: 0; }
+    .lp-methodo-note strong { color: var(--paper); }
+
+    @media (max-width: 900px) {
+      .lp-methodo-grid { grid-template-columns: 1fr; gap: 40px; }
+      .lp-methodo-steps { grid-template-columns: 1fr; }
+    }
+
+    /* CONFIANCE */
+    .lp-confiance {
+      background: var(--paper); color: var(--ink);
+      padding: clamp(56px, 7vw, 100px) clamp(20px, 4vw, 48px);
+      text-align: center;
+    }
+    .lp-confiance-inner { max-width: 1320px; margin: 0 auto; }
+    .lp-confiance-eyebrow {
+      font-family: var(--font-mono);
+      font-size: 0.68rem; letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--ink-soft); opacity: 0.6;
+      margin-bottom: 8px;
+    }
+    .lp-confiance h2 {
+      font-family: var(--font-display);
+      font-weight: 400;
+      font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+      line-height: 1.2; color: var(--ink);
+      margin: 0 0 40px;
+    }
+    .lp-confiance-logos {
+      display: flex; flex-wrap: wrap; align-items: center;
+      justify-content: center; gap: 32px 56px;
+      margin-bottom: 24px;
+    }
+    .lp-confiance-logos img {
+      height: 42px; width: auto;
+      object-fit: contain;
+    }
+    .lp-confiance-note {
+      font-family: var(--font-mono);
+      font-size: 0.78rem; letter-spacing: 0.04em;
+      color: var(--ink-soft);
+      max-width: 600px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: center; gap: 10px;
+    }
+    .lp-confiance-note svg { width: 16px; height: 16px; color: var(--gold); flex-shrink: 0; }
+    @media (max-width: 640px) {
+      .lp-confiance-logos { gap: 20px 36px; }
+      .lp-confiance-logos img { height: 26px; }
+    }
+
+    /* DIFFÉRENCE */
+    .lp-difference {
+      background: var(--ink); color: var(--paper);
+      padding: clamp(64px, 8vw, 120px) clamp(20px, 4vw, 48px);
+    }
+    .lp-difference-inner {
+      max-width: 1100px; margin: 0 auto;
+    }
+    .lp-difference-eyebrow {
+      font-family: var(--font-mono);
+      font-size: 0.72rem; letter-spacing: 0.22em;
+      text-transform: uppercase; color: var(--gold);
+      margin-bottom: 16px;
+    }
+    .lp-difference h2 {
+      font-family: var(--font-display);
+      font-weight: 400;
+      font-size: clamp(1.6rem, 3vw, 2.3rem);
+      line-height: 1.2; letter-spacing: -0.015em;
+      color: var(--paper); margin: 0 0 48px;
+      max-width: 720px;
+    }
+    .lp-difference h2 em { font-style: italic; color: var(--gold); font-weight: 300; }
+    .lp-difference-pillars {
+      list-style: none; padding: 0; margin: 0;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+    }
+    .lp-difference-pillars li {
+      display: flex; flex-direction: column; gap: 14px;
+      padding: 28px 24px;
+      background: rgba(244, 239, 230, 0.03);
+      border: 1px solid rgba(244, 239, 230, 0.1);
+      border-radius: 4px;
+    }
+    .lp-difference-pillars .pillar-icon { width: 36px; height: 36px; color: var(--gold); flex-shrink: 0; }
+    @media (max-width: 900px) {
+      .lp-difference-pillars { grid-template-columns: 1fr; gap: 20px; }
+    }
+    .lp-difference-pillars h3 {
+      font-family: var(--font-display);
+      font-weight: 500; font-size: 1.1rem;
+      color: var(--paper); margin: 0 0 6px;
+    }
+    .lp-difference-pillars p { font-size: 0.92rem; line-height: 1.5; color: var(--paper-soft); margin: 0; }
+
+    /* CTA FINAL */
+    .lp-cta {
+      background: var(--ink); color: var(--paper);
+      padding: clamp(56px, 7vw, 100px) clamp(20px, 4vw, 48px);
+      border-top: 1px solid rgba(244, 239, 230, 0.08);
+    }
+    .lp-cta-inner {
+      max-width: 900px; margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 32px; align-items: center;
+    }
+    .lp-cta h2 {
+      font-family: var(--font-display);
+      font-weight: 400;
+      font-size: clamp(1.3rem, 2.4vw, 1.75rem);
+      line-height: 1.25; color: var(--paper);
+      margin: 0 0 16px;
+    }
+    .lp-cta-meta {
+      display: flex; flex-wrap: wrap; gap: 8px 20px;
+      font-family: var(--font-mono);
+      font-size: 0.72rem; letter-spacing: 0.06em;
+      color: var(--paper-soft); opacity: 0.7;
+    }
+    .lp-cta-meta span { display: inline-flex; align-items: center; gap: 6px; }
+    .lp-cta-meta span::before {
+      content: ""; width: 4px; height: 4px;
+      background: var(--gold); border-radius: 50%;
+    }
+    @media (max-width: 720px) {
+      .lp-cta-inner { grid-template-columns: 1fr; }
+    }
+
+    /* FOOTER */
+    .lp-footer {
+      background: var(--ink); color: var(--paper-soft);
+      padding: 32px clamp(20px, 4vw, 48px);
+      border-top: 1px solid rgba(244, 239, 230, 0.08);
+    }
+    .lp-footer-inner {
+      max-width: 1320px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 18px;
+      font-size: 0.82rem;
+    }
+    .lp-footer-logo img { height: 32px; width: auto; max-width: 200px; }
+    .lp-footer-contact {
+      display: flex; flex-wrap: wrap; gap: 14px 28px;
+      align-items: center;
+    }
+    .lp-footer-contact a {
+      display: inline-flex; align-items: center; gap: 8px;
+      color: var(--paper-soft);
+      transition: color 0.3s var(--ease);
+    }
+    .lp-footer-contact a:hover { color: var(--paper); }
+    .lp-footer-contact svg { width: 14px; height: 14px; color: var(--gold); }
+
+    /* STICKY CALL */
+    .lp-sticky-call {
+      display: none;
+      position: fixed;
+      bottom: 12px; left: 12px; right: 12px;
+      padding: 14px 20px;
+      background: var(--rust); color: var(--paper);
+      border-radius: 2px;
+      font-family: var(--font-body);
+      font-size: 0.82rem; font-weight: 500;
+      letter-spacing: 0.06em; text-transform: uppercase;
+      align-items: center; justify-content: center; gap: 10px;
+      z-index: 40;
+      box-shadow: 0 6px 24px rgba(194, 87, 46, 0.4);
+    }
+    .lp-sticky-call svg { width: 14px; height: 14px; }
+    @media (max-width: 768px) {
+      .lp-sticky-call { display: flex; }
+      body { padding-bottom: 80px; }
+    }
+
+    /* RESPONSIVE GLOBAL */
+    @media (max-width: 768px) {
+      .lp-nav-inner { padding: 10px 16px; }
+      .lp-nav-logo img { height: 32px; max-width: 200px; }
+      .lp-nav-cta { padding: 8px 14px; font-size: 0.72rem; }
+      .lp-hero { padding: 32px 20px 48px; }
+      .lp-hero-eyebrow-bar { margin-bottom: 24px; justify-content: flex-start; }
+      .lp-hero-eyebrow-bar::before { max-width: 60px; }
+      .lp-hero-title { font-size: 1.85rem; }
+      .lp-hero-lead { font-size: 0.95rem; }
+      .lp-defi, .lp-methodo, .lp-difference, .lp-cta { padding: 56px 20px; }
+      .lp-confiance { padding: 48px 20px; }
+    }
+  </style>
+  <!-- Microsoft Clarity -->
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "wy9q4gthkf");
+  </script>
+  <!-- Google Analytics (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-7NJD5DMRJT"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-7NJD5DMRJT');
+  </script>
+</head>
+<body class="lp">
+
+<a href="#main-content" class="skip-link">Aller au contenu principal</a>
+
+<nav class="lp-nav" aria-label="Navigation principale">
+  <div class="lp-nav-inner">
+    <a href="index.html" class="lp-nav-logo" aria-label="Major Exchanges — Accueil">
+      <img src="assets/img/logo.png" alt="Major Exchange" />
+    </a>
+    <a href="tel:+33625671842" class="lp-nav-cta" data-event-location="nav">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/>
+      </svg>
+      Appeler
+    </a>
+  </div>
+</nav>
+
+<main id="main-content">
+
+  <!-- HERO 2 colonnes -->
+  <section class="lp-hero">
+    <div class="lp-hero-eyebrow-bar">Méthodologie RH experte</div>
+
+    <div class="lp-hero-grid">
+      <div>
+        <h1 class="lp-hero-title">
+          Structurer l'analyse.<br>
+          <em>Éclairer la décision RH.</em>
+        </h1>
+        <p class="lp-hero-lead">
+          Major Exchanges met à disposition des experts RH une méthodologie
+          d'analyse comportementale contextualisée pour des décisions
+          humaines plus fiables.
+        </p>
+        <div class="lp-hero-ctas">
+          <a href="tel:+33625671842" class="lp-btn-primary" data-event-location="hero">
+            Demander une démo
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="5" y1="12" x2="19" y2="12"/>
+              <polyline points="12 5 19 12 12 19"/>
+            </svg>
+          </a>
+          <a href="references.html" class="lp-btn-ghost">
+            Voir un exemple d'étude
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="5" y1="12" x2="19" y2="12"/>
+              <polyline points="12 5 19 12 12 19"/>
+            </svg>
+          </a>
+        </div>
+        <ul class="lp-hero-bullets">
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            Méthodologie experte depuis plus de 20 ans
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            Utilisée dans des contextes exigeants et sensibles
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/></svg>
+            L'outil ne remplace pas l'expert RH, il l'aide à voir plus clair
+          </li>
+        </ul>
+      </div>
+
+      <div class="lp-hero-diagram">
+        <svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <defs>
+            <radialGradient id="centerGlow" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="#C9A961" stop-opacity="0.5"/>
+              <stop offset="50%" stop-color="#C2572E" stop-opacity="0.18"/>
+              <stop offset="100%" stop-color="#C2572E" stop-opacity="0"/>
+            </radialGradient>
+          </defs>
+          <g fill="none" stroke="#F4EFE6" stroke-opacity="0.1" stroke-width="0.8">
+            <circle cx="250" cy="250" r="200"/>
+            <circle cx="250" cy="250" r="150"/>
+            <circle cx="250" cy="250" r="100"/>
+            <circle cx="250" cy="250" r="50"/>
+          </g>
+          <g stroke="#C9A961" stroke-width="0.6" stroke-opacity="0.4">
+            <line x1="250" y1="250" x2="250" y2="50"/>
+            <line x1="250" y1="250" x2="423" y2="150"/>
+            <line x1="250" y1="250" x2="423" y2="350"/>
+            <line x1="250" y1="250" x2="250" y2="450"/>
+            <line x1="250" y1="250" x2="77" y2="350"/>
+            <line x1="250" y1="250" x2="77" y2="150"/>
+          </g>
+          <circle cx="250" cy="250" r="90" fill="url(#centerGlow)"/>
+          <circle cx="250" cy="250" r="65" fill="none" stroke="#C9A961" stroke-width="1.2" stroke-opacity="0.7"/>
+          <g fill="#C9A961">
+            <circle cx="250" cy="50" r="6"/>
+            <circle cx="423" cy="150" r="6"/>
+            <circle cx="423" cy="350" r="6"/>
+            <circle cx="250" cy="450" r="6"/>
+            <circle cx="77" cy="350" r="6"/>
+            <circle cx="77" cy="150" r="6"/>
+          </g>
+          <polygon points="250,90 380,170 380,330 250,410 120,330 120,170"
+            fill="none" stroke="#E8956E" stroke-width="1.2" stroke-opacity="0.5"
+            stroke-dasharray="3 4"/>
+        </svg>
+        <div class="lp-radar-label" style="top:0; left:50%; transform:translate(-50%,-10px);">Intégration<br>&amp; Adaptabilité</div>
+        <div class="lp-radar-label" style="top:22%; right:-2%; transform:translate(0,-50%);">Motivations<br>&amp; Drivers</div>
+        <div class="lp-radar-label" style="bottom:22%; right:-2%; transform:translate(0,50%);">Organisation<br>&amp; Méthodes</div>
+        <div class="lp-radar-label" style="bottom:0; left:50%; transform:translate(-50%,10px);">Relations<br>&amp; Communication</div>
+        <div class="lp-radar-label" style="bottom:22%; left:-2%; transform:translate(0,50%);">Équilibre<br>&amp; Énergie</div>
+        <div class="lp-radar-label" style="top:22%; left:-2%; transform:translate(0,-50%);">Potentiels<br>&amp; Évolution</div>
+        <div class="lp-radar-center">Analyse<br>contextuelle</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LE DÉFI -->
+  <section class="lp-defi">
+    <div class="lp-defi-inner">
+      <div class="lp-section-eyebrow">— Le défi —</div>
+      <h2>Les compétences ne suffisent pas toujours à anticiper les dynamiques d'intégration.</h2>
+      <div class="lp-defi-grid">
+        <div class="lp-defi-card">
+          <svg class="lp-defi-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <!-- Arc 270° (ouverture en haut-droite), avec dots aux extrémités -->
+            <path d="M 12 4 A 8 8 0 1 0 20 12"/>
+            <circle cx="12" cy="4" r="1" fill="currentColor" stroke="none"/>
+            <circle cx="20" cy="12" r="1" fill="currentColor" stroke="none"/>
+          </svg>
+          <h3>Difficultés d'intégration</h3>
+          <p>Des incompatibilités invisibles peuvent freiner la réussite.</p>
+        </div>
+        <div class="lp-defi-card">
+          <svg class="lp-defi-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><line x1="9" y1="9" x2="15" y2="15"/><line x1="15" y1="9" x2="9" y2="15"/></svg>
+          <h3>Mauvais recrutements</h3>
+          <p>Un recrutement inadapté coûte cher à l'entreprise.</p>
+        </div>
+        <div class="lp-defi-card">
+          <svg class="lp-defi-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><line x1="1" y1="1" x2="23" y2="23"/></svg>
+          <h3>Manque de visibilité</h3>
+          <p>Les comportements et motivations restent souvent sous-évalués.</p>
+        </div>
+        <div class="lp-defi-card">
+          <svg class="lp-defi-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="19" y1="8" x2="19" y2="14"/><line x1="22" y1="11" x2="16" y2="11"/></svg>
+          <h3>Risques humains sous-estimés</h3>
+          <p>Les dynamiques d'équipe peuvent se fragiliser.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MÉTHODOLOGIE -->
+  <section class="lp-methodo">
+    <div class="lp-methodo-inner">
+      <div class="lp-methodo-eyebrow">— Notre méthodologie —</div>
+      <h2>Une approche structurée<br>au service de vos décisions.</h2>
+
+      <div class="lp-methodo-grid">
+        <ul class="lp-methodo-uses">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg> Recrutement</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg> Mobilité interne</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg> Management &amp; Cohésion</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg> Coaching &amp; Développement</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg> Équipes &amp; Collectifs</li>
+        </ul>
+
+        <div>
+          <div class="lp-methodo-steps">
+            <div class="lp-step">
+              <span class="lp-step-num">1</span>
+              <svg class="lp-step-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><line x1="7" y1="9" x2="17" y2="9"/><line x1="7" y1="13" x2="17" y2="13"/><line x1="7" y1="17" x2="13" y2="17"/></svg>
+              <h3>Étude</h3>
+              <p>Le candidat réalise une étude interactive et sécurisée.</p>
+            </div>
+            <div class="lp-step">
+              <span class="lp-step-num">2</span>
+              <svg class="lp-step-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M16 11l2 2 4-4"/></svg>
+              <h3>Entretien structuré</h3>
+              <p>Un échange guidé par nos experts RH pour affiner l'analyse.</p>
+            </div>
+            <div class="lp-step">
+              <span class="lp-step-num">3</span>
+              <svg class="lp-step-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="17" x2="13" y2="17"/></svg>
+              <h3>Synthèse exploitable</h3>
+              <p>Vous recevez une synthèse claire, visuelle et opérationnelle pour vos décisions.</p>
+            </div>
+          </div>
+
+          <div class="lp-methodo-note">
+            <svg class="pi-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            <span><strong>Pré-évaluation par IA</strong> · Objectivation par croisement et multi-niveaux d'information · Analyse séquentielle : temps de réaction → organisation de l'information.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONFIANCE -->
+  <section class="lp-confiance">
+    <div class="lp-confiance-inner">
+      <div class="lp-confiance-eyebrow">Une méthodologie utilisée dans des environnements exigeants</div>
+      <h2>La confiance d'organisations et d'institutions.</h2>
+      <div class="lp-confiance-logos">
+        <img src="assets/img/logo_cea.png" alt="CEA" />
+        <img src="assets/img/logo_irsn.png" alt="IRSN" />
+        <img src="assets/img/logo_suez.png" alt="Suez" />
+        <img src="assets/img/logo_cci.jpg" alt="CCI Occitanie" />
+        <img src="assets/img/logo_otan.png" alt="OTAN" />
+        <img src="assets/img/logo_omc.png" alt="OMC" />
+        <img src="assets/img/logo_lafayette.png" alt="Lafayette" />
+      </div>
+      <p class="lp-confiance-note">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        Méthodologie historiquement utilisée dans des contextes sensibles &amp; à fortes contraintes.
+      </p>
+    </div>
+  </section>
+
+  <!-- DIFFÉRENCE -->
+  <section class="lp-difference">
+    <div class="lp-difference-inner">
+      <div>
+        <div class="lp-difference-eyebrow">Notre différence</div>
+        <h2>L'expertise humaine reste au centre.<br>La méthodologie donne la <em>structure</em>.</h2>
+        <ul class="lp-difference-pillars">
+          <li>
+            <svg class="pillar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/></svg>
+            <div>
+              <h3>Décision humaine</h3>
+              <p>Nous apportons structure et objectivation.</p>
+            </div>
+          </li>
+          <li>
+            <svg class="pillar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2L3 7v6c0 5 4 9 9 10 5-1 9-5 9-10V7l-9-5z"/><polyline points="9 12 11 14 15 10"/></svg>
+            <div>
+              <h3>Méthodologie éprouvée</h3>
+              <p>Approche unique, validée et utilisée depuis plus de 20 ans.</p>
+            </div>
+          </li>
+          <li>
+            <svg class="pillar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12c0 5-4 9-9 9s-9-4-9-9 4-9 9-9c2.5 0 4.5 1 6 2.5"/><polyline points="22 4 12 14 9 11"/></svg>
+            <div>
+              <h3>IA au service de l'expertise</h3>
+              <p>Pré-analyse, interprétation, conseil et accompagnement par nos experts.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="lp-cta">
+    <div class="lp-cta-inner">
+      <div>
+        <h2>Échangeons sur vos enjeux.<br>Découvrons ensemble si Major Exchanges correspond à vos besoins.</h2>
+        <div class="lp-cta-meta">
+          <span>Échange personnalisé</span>
+          <span>Démonstration de la méthode</span>
+          <span>Réponse sous 24h</span>
+        </div>
+      </div>
+      <a href="tel:+33625671842" class="lp-btn-primary" data-event-location="final">
+        Demander une démo
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="5" y1="12" x2="19" y2="12"/>
+          <polyline points="12 5 19 12 12 19"/>
+        </svg>
+      </a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="lp-footer">
+  <div class="lp-footer-inner">
+    <div class="lp-footer-logo">
+      <img src="assets/img/logo.png" alt="Major Exchange" />
+    </div>
+    <div class="lp-footer-contact">
+      <a href="tel:+33625671842" data-event-location="footer">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        06.25.67.18.42
+      </a>
+      <a href="mailto:g.callu@major-exchanges.com">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        g.callu@major-exchanges.com
+      </a>
+      <a href="https://major-exchanges.com" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        major-exchanges.com
+      </a>
+    </div>
+  </div>
+</footer>
+
+<a href="tel:+33625671842" class="lp-sticky-call" data-event-location="sticky-mobile">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+  Appeler · 06.25.67.18.42
+</a>
+
+</body>
+</html>
